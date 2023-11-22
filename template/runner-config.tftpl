@@ -38,6 +38,8 @@ listen_address = "${prometheus_listen_address}"
       BucketName = "${bucket_name}"
       BucketLocation = "${aws_region}"
       Insecure = false
+      ServerSideEncryption = "KMS"
+      ServerSideEncryptionKeyID = "alias/gitlab-runner"
 
   [runners.machine]
     IdleCount = ${runners_idle_count}
